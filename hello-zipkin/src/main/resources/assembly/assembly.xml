@@ -1,0 +1,32 @@
+<assembly>
+    <id>assembly-${env.devMode}-${web.app.version}</id> <!--输出文件名-->
+    <formats>
+        <format>tar.gz</format> <!--打包文件结构-->
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>src/main/resources/bin</directory>  <!-- 项目文件目录-->
+            <outputDirectory>bin</outputDirectory> <!--生成bin目录-->
+            <directoryMode>0755</directoryMode> <!--目录执行权限-->
+            <fileMode>0755</fileMode><!--文件执行权限-->
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources/env/${env.devMode}</directory>
+            <outputDirectory>conf</outputDirectory>
+            <directoryMode>0744</directoryMode>
+            <fileMode>0644</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>lib</directory>
+            <outputDirectory>lib</outputDirectory>
+            <directoryMode>0744</directoryMode>
+            <fileMode>0644</fileMode>
+        </fileSet>
+    </fileSets>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>lib</outputDirectory><!-- 依赖jar包放置目录-->
+        </dependencySet>
+    </dependencySets>
+</assembly>

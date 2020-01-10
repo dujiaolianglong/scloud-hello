@@ -1,0 +1,27 @@
+########
+#访问配置中心
+	http://127.0.0.1:8080 	配置中心地址
+	hello_order	label
+	application 	spring.cloud.config.name
+	common 		profile
+	
+	http://127.0.0.1:8080/hello_order/application-common.properties
+	
+	http://配置中心地址/{label}/{application}-{profile}.yml(properties)
+	
+########
+#my.name 的加载顺序
+	覆盖顺序:	
+	配置--->启动参数--->application.yml--->bootstrap.yml
+
+
+########
+SpringCloud Config 
+	#springcloud config 配置必须放在bootstrap.yml(properties)文件中
+	eureka 地址配置可以从启动参数传入, 这样做就可以直接将uat包拷贝到线上，启动参数指定eureka
+
+
+########
+多环境
+	maven profile 关联多环境配置
+	工程上右键->Maven->Select Maven Profiles..  激活对应的环境

@@ -1,0 +1,50 @@
+server: 
+  port: 8086
+  connection-timeout: 5000
+  compression: 
+    enabled: true
+  servlet: 
+    context-path: /
+    application-display-name: hello_user_8086
+  tomcat: 
+    basedir: /data/tomcat-tmp/hello_user_8086
+    uri-encoding: UTF-8
+    max-connections: 1000
+    max-threads: 500
+    min-spare-threads: 20
+    accept-count: 100
+    accesslog: 
+      enabled: true
+      directory: logs
+      request-attributes-enabled: true
+    
+spring:
+  application:
+    name: hello-user
+  profiles:
+    active: common,db,kafka,redis
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  #zipkin:
+    #base-url: http://127.0.0.1:9411 #通过http方式上传链路信息
+  #zipkin:
+    #sender:
+      #type: kafka
+    #service:
+      #name: ${spring.application.name} #zipkin里看到的的service name
+  #sleuth:
+    #sampler:
+      #probability: 1.0 #将采样比例1.0是全部都采集，默认是0.1
+  #kafka:
+    #bootstrap-servers:
+      #- 192.168.1.102:9092
+      #- 192.168.1.103:9092
+      #- 192.168.1.104:9092
+    
+logging:
+  config: classpath:logback-spring-8086.xml
+  
+my: 
+  name: liuxiaoliang--application
+    

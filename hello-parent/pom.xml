@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.lxl</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0</version>
+	</parent>
+
+	<groupId>com.lxl.hello</groupId>
+	<artifactId>hello-parent</artifactId>
+
+	<packaging>pom</packaging>
+
+	<name>hello-parent</name>
+	<description>hello-parent</description>
+
+	<properties>
+		<framework.service.version>0.1.0</framework.service.version>
+		<framework.client.version>0.1.0</framework.client.version>
+		<common.component.base.version>0.1.0</common.component.base.version>
+		<common.component.kafka.version>0.1.0</common.component.kafka.version>
+		<common.component.lock.version>0.1.0</common.component.lock.version>
+		<common.component.redis.version>0.1.0</common.component.redis.version>
+		<common.component.mysql.version>0.1.0</common.component.mysql.version>
+	</properties>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.lxl.common.component</groupId>
+				<artifactId>common-component-base</artifactId>
+				<version>${common.component.base.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lxl.common.component</groupId>
+				<artifactId>common-component-kafka</artifactId>
+				<version>${common.component.kafka.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lxl.common.component</groupId>
+				<artifactId>common-component-lock</artifactId>
+				<version>${common.component.lock.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lxl.common.component</groupId>
+				<artifactId>common-component-redis</artifactId>
+				<version>${common.component.redis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lxl.common.component</groupId>
+				<artifactId>common-component-mysql</artifactId>
+				<version>${common.component.mysql.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.lxl.framework</groupId>
+				<artifactId>framework-client</artifactId>
+				<version>${framework.client.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.lxl.framework</groupId>
+				<artifactId>framework-service</artifactId>
+				<version>${framework.service.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
