@@ -20,7 +20,7 @@ server:
 
 spring:
   application:
-    name: zipkin-server
+    name: hello-zipkin
   sleuth:
     enabled: false
     sampler:

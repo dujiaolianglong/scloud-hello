@@ -12,6 +12,10 @@
 	<artifactId>hello-discovery</artifactId>
 	<name>hello-discovery</name>
 	<description>hello-discovery</description>
+	
+	<properties>
+		<web.app.version>0.1.0</web.app.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -36,10 +40,6 @@
 			</activation>
 			<properties>
 				<env.devMode>dev</env.devMode>
-				<skipAssemblyDEV>false</skipAssemblyDEV>
-				<skipAssemblyTEST>true</skipAssemblyTEST>
-				<skipAssemblyUAT>true</skipAssemblyUAT>
-				<skipAssemblyPROD>true</skipAssemblyPROD>
 			</properties>
 		</profile>
 		<profile>
@@ -49,10 +49,6 @@
 			</activation>
 			<properties>
 				<env.devMode>test</env.devMode>
-				<skipAssemblyDEV>true</skipAssemblyDEV>
-				<skipAssemblyTEST>false</skipAssemblyTEST>
-				<skipAssemblyUAT>true</skipAssemblyUAT>
-				<skipAssemblyPROD>true</skipAssemblyPROD>
 			</properties>
 		</profile>
 		<profile>
@@ -62,10 +58,6 @@
 			</activation>
 			<properties>
 				<env.devMode>uat</env.devMode>
-				<skipAssemblyDEV>true</skipAssemblyDEV>
-				<skipAssemblyTEST>true</skipAssemblyTEST>
-				<skipAssemblyUAT>false</skipAssemblyUAT>
-				<skipAssemblyPROD>true</skipAssemblyPROD>
 			</properties>
 		</profile>
 		<profile>
@@ -75,10 +67,6 @@
 			</activation>
 			<properties>
 				<env.devMode>prod</env.devMode>
-				<skipAssemblyDEV>true</skipAssemblyDEV>
-				<skipAssemblyTEST>true</skipAssemblyTEST>
-				<skipAssemblyUAT>true</skipAssemblyUAT>
-				<skipAssemblyPROD>false</skipAssemblyPROD>
 			</properties>
 		</profile>
 	</profiles>

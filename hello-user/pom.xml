@@ -12,6 +12,10 @@
 
 	<name>hello-user</name>
 	<description>hello-user</description>
+	
+	<properties>
+		<web.app.version>0.1.0</web.app.version>
+	</properties>
 
 	<dependencies>
 		<dependency>

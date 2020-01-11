@@ -10,6 +10,10 @@
 
 	<name>hello-zipkin</name>
 	<description>hello-zipkin</description>
+	
+	<properties>
+		<web.app.version>0.1.0</web.app.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -97,7 +101,7 @@
 	</profiles>
 
 	<build>
-		<finalName>hello-order</finalName>
+		<finalName>hello-zipkin</finalName>
 		<plugins>
 			<!-- 继承父项目pom中pluginManagement下的 -->
 			<plugin>
