@@ -32,12 +32,9 @@ public class Init implements CommandLineRunner {
 	@Autowired
 	private RedissonClient redissonClient;
 
-	@Autowired
-	private KafkaSendUtils kafkaSendUtils;
-
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("env : {}", EnvProfileUtils.getDevProfile());
+		logger.info("env : {}", EnvProfileUtils.getEnvProfile());
 
 		RLock rLock = redissonClient.getLock("testlock");
 		try {
@@ -56,7 +53,7 @@ public class Init implements CommandLineRunner {
 		testKafka.setId(1);
 		testKafka.setName("lxl");
 		testKafka.setCreateTime(new Date());
-		kafkaSendUtils.send("lxl.test", testKafka);
+		KafkaSendUtils.send("lxl.test", testKafka);
 	}
 
 }
