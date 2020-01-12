@@ -3,13 +3,10 @@
  */
 package com.lxl.hello.order.config;
 
-import java.nio.charset.Charset;
-
 import org.apache.catalina.connector.Connector;
 import org.apache.coyote.http11.Http11NioProtocol;
 import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
-import org.springframework.boot.web.server.Compression;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.core.Ordered;
@@ -25,13 +22,6 @@ public class EmbeddedTomcatConfig implements WebServerFactoryCustomizer<Configur
 	@Override
 	public void customize(ConfigurableServletWebServerFactory factory) {
 		TomcatServletWebServerFactory tomcatServletWebServerFactory = (TomcatServletWebServerFactory) factory;
-		tomcatServletWebServerFactory.setUriEncoding(Charset.forName("UTF-8"));
-//		tomcatServletWebServerFactory.setContextPath("/");
-
-		Compression compression = new Compression();
-		compression.setEnabled(true);
-		tomcatServletWebServerFactory.setCompression(compression);
-
 		tomcatServletWebServerFactory.addConnectorCustomizers(new TomcatConnectorCustomizer() {
 			@Override
 			public void customize(Connector connector) {
