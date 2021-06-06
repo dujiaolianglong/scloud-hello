@@ -21,7 +21,8 @@
     <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
     <!-- 彩色日志格式 -->
     <property name="CONSOLE_LOG_PATTERN" value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.Asia/Shanghai}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
-
+	
+	<property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.Asia/Shanghai}[%thread][%X{traceId}][%level] %logger[%line]: %msg%n"/>
 
     <!--输出到控制台-->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
@@ -40,7 +41,7 @@
     <appender name="DEBUG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${log.path}/${log.name}_debug.log</file>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.Asia/Shanghai}[%thread][%X{traceId}][%level] %logger[%line]: %msg%n</pattern>
+            <pattern>${pattern}</pattern>
             <charset>UTF-8</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -61,7 +62,7 @@
     <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${log.path}/${log.name}_info.log</file>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.Asia/Shanghai}[%thread][%X{traceId}][%level] %logger[%line]: %msg%n</pattern>
+            <pattern>${pattern}</pattern>
             <charset>UTF-8</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -82,7 +83,7 @@
     <appender name="WARN_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${log.path}/${log.name}_warn.log</file>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.Asia/Shanghai}[%thread][%X{traceId}][%level] %logger[%line]: %msg%n</pattern>
+            <pattern>${pattern}</pattern>
             <charset>UTF-8</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -104,7 +105,7 @@
     <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${log.path}/${log.name}_error.log</file>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.Asia/Shanghai}[%thread][%X{traceId}][%level] %logger[%line]: %msg%n</pattern>
+            <pattern>${pattern}</pattern>
             <charset>UTF-8</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
